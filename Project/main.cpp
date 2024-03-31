@@ -4,7 +4,7 @@
 #include "defines.h"
 #include "tetris.h"
 
-typedef enum Game {TETRIS, SNAKE, FRUIT_BASKET, INVADOR, NONE};
+typedef enum Game {TETRIS, SNAKE, FRUIT_BASKET, INVADOR, MENU};
 
 int main() {
 	InitWindow(SCREEN_W, SCREEN_H, "Games");
@@ -25,6 +25,9 @@ int main() {
 		DrawTextEx(font, title.c_str(), titleOffset, TITLE_SIZE, 10, GRAY);
 		// start game
 		switch (playedGame) {
+			case MENU:
+				title = "GAMES";
+				break;
 			case TETRIS:
 				title = "TETRIS";
 				tetris.Start(font);

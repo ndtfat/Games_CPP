@@ -130,7 +130,6 @@
     <ClCompile Include="block.cpp" />
     <ClCompile Include="blocks.cpp" />
     <ClCompile Include="board.cpp" />
-    <ClCompile Include="define.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="position.cpp" />
     <ClCompile Include="tetris.cpp" />

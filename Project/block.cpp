@@ -2,6 +2,7 @@
 #include "block.h"
 
 Block::Block() {
+	id = 1;
 	offset = { 0, 0 };
 	rotationState = 0;
 }
@@ -9,7 +10,7 @@ Block::Block() {
 void Block::Draw(int offsetX, int offsetY) {
 	std::vector<Position> tiles = GetCellPositions();
 	for (Position item : tiles) {
-		DrawRectangle(item.col * CELL_SIZE + offsetX, item.row * CELL_SIZE + offsetY, CELL_SIZE - 1, CELL_SIZE - 1, GRAY);
+		DrawRectangle(item.col * TT_CELL_SIZE + offsetX, item.row * TT_CELL_SIZE + offsetY, TT_CELL_SIZE - 1, TT_CELL_SIZE - 1, GRAY);
 	}
 }
 
