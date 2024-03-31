@@ -1,6 +1,6 @@
 Down code:
 1. git clone https://github.com/ndtfat/Games_CPP.git
-2. git checkout [tên branch của mỗi thằng]
+2. git checkout [tên branch của mỗi thằng] (VD: git checkout snake)
 3. Xong code
 
 Đẩy code lên github:
