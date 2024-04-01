@@ -13,14 +13,14 @@ void Board::Initialize() {
 }
 
 void Board::Draw() {
-	DrawRectangle(TT_BOARD_OFFSET_X, TT_BOARD_OFFSET_Y, TT_BOARD_WIDTH, TT_BOARD_HEIGHT, LIGHTGRAY);
+	DrawRectangle(TT_BOARD_X, TT_Y, TT_BOARD_WIDTH, TT_BOARD_HEIGHT, LIGHTGRAY);
 
 	for (int r = 0; r < TT_NUM_ROWS; r++)
 		for (int c = 0; c < TT_NUM_COLS; c++) {
 			Color cellColor = grid[r][c] == 1 ? LIGHTGRAY : WHITE;
 			Vector2 cell = {
-				TT_CELL_OFFSET_X + (c * TT_CELL_SIZE),
-				TT_CELL_OFFSET_Y + (r * TT_CELL_SIZE)
+				TT_CELL_X + (c * TT_CELL_SIZE),
+				TT_Y + (r * TT_CELL_SIZE)
 			};
 
 			DrawRectangle(cell.x, cell.y, TT_CELL_SIZE - 1, TT_CELL_SIZE - 1, cellColor);
