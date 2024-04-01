@@ -1,23 +1,13 @@
 #include <iostream>
 #include <random>
-#include <ctime>
-#include <cstdio>
 #include "tetris.h"
+#include "blocks.cpp"
 #include "defines.h"
-
-double lastUpdateTime = 0;
-bool TimeOut(double interval) {
-	double currentTime = GetTime();
-	if (currentTime - lastUpdateTime >= interval) {
-		lastUpdateTime = currentTime;
-		return true;
-	}
-	return false;
-}
+#include "util.h"
 
 Tetris::Tetris() {
 	score = 0;
-	level = 10;
+	level = 0;
 	pause = false;
 	gameOver = false;
 	board = Board();
@@ -29,7 +19,7 @@ Tetris::Tetris() {
 void Tetris::Start(Font font) {
 	DrawSidbar(font);
 	board.Draw();
-	currBlock.Draw(TT_CELL_OFFSET_X, TT_BOARD_OFFSET_Y);
+	currBlock.Draw(TT_CELL_X, TT_Y);
 	HandleKeyPress();
 
 	if (!pause && !gameOver) {
@@ -54,8 +44,8 @@ void Tetris::DrawOverLay(Font font,const char* text) {
 	Vector2 textSize = MeasureTextEx(font, text, fontSize, spacing);
 
 	DrawRectangle(
-		TT_BOARD_OFFSET_X,
-		TT_BOARD_OFFSET_Y,
+		TT_BOARD_X,
+		TT_Y,
 		TT_BOARD_WIDTH,
 		TT_BOARD_HEIGHT,
 		OVERLAY_COLOR
@@ -64,8 +54,8 @@ void Tetris::DrawOverLay(Font font,const char* text) {
 		font, 
 		text, 
 		{ 
-			TT_BOARD_OFFSET_X + (TT_BOARD_WIDTH + TT_PADDING) / 2 - textSize.x / 2, 
-			TT_BOARD_OFFSET_Y + TT_CELL_SIZE * 8 
+			TT_BOARD_X + (TT_BOARD_WIDTH + TT_PADDING) / 2 - textSize.x / 2, 
+			TT_Y + TT_CELL_SIZE * 8
 		},
 		fontSize, 
 		spacing, 
@@ -74,22 +64,23 @@ void Tetris::DrawOverLay(Font font,const char* text) {
 }
 
 void Tetris::DrawSidbar(Font font) {
-	DrawTextEx(font, "Next", { TT_SIDEBAR_OFFSET_X, TT_SIDEBAR_OFFSET_Y }, 30, 5, GRAY);
+	DrawTextEx(font, "Next", { TT_SIDEBAR_X, TT_Y }, 30, 5, GRAY);
 	nextBlock.Draw(
-		TT_SIDEBAR_OFFSET_X - (nextBlock.offset.y * TT_CELL_SIZE),
-		TT_NEXT_BLOCK_OFFSET_Y
+		TT_SIDEBAR_X - (nextBlock.offset.y * TT_CELL_SIZE),
+		TT_Y + TT_CELL_SIZE + 30
 	);
-	DrawTextEx(font, "Level", { TT_SIDEBAR_OFFSET_X, TT_NEXT_BLOCK_OFFSET_Y + TT_CELL_SIZE * 4 }, 20, 5, GRAY);
-	DrawTextEx(font, "Score", { TT_SIDEBAR_OFFSET_X, TT_NEXT_BLOCK_OFFSET_Y + TT_CELL_SIZE * 5 }, 20, 5, GRAY);
+	DrawTextEx(font, "Level", { TT_SIDEBAR_X, TT_NEXT_BLOCK_Y + TT_CELL_SIZE * 4 }, 20, 5, GRAY);
+	DrawTextEx(font, "Score", { TT_SIDEBAR_X, TT_NEXT_BLOCK_Y + TT_CELL_SIZE * 5 }, 20, 5, GRAY);
 	char levelText[3];
 	char scoreText[10];
 	sprintf_s(levelText, "%d", level);
 	sprintf_s(scoreText, "%d", score);
-	DrawTextEx(font, levelText, { TT_SIDEBAR_OFFSET_X + TT_CELL_SIZE * 3, TT_NEXT_BLOCK_OFFSET_Y + TT_CELL_SIZE * 4 }, 20, 5, GRAY);
-	DrawTextEx(font, scoreText, { TT_SIDEBAR_OFFSET_X + TT_CELL_SIZE * 3, TT_NEXT_BLOCK_OFFSET_Y + TT_CELL_SIZE * 5 }, 20, 5, GRAY);
+	DrawTextEx(font, levelText, { TT_SIDEBAR_X + TT_CELL_SIZE * 3, TT_NEXT_BLOCK_Y + TT_CELL_SIZE * 4 }, 20, 5, GRAY);
+	DrawTextEx(font, scoreText, { TT_SIDEBAR_X + TT_CELL_SIZE * 3, TT_NEXT_BLOCK_Y + TT_CELL_SIZE * 5 }, 20, 5, GRAY);
 
-	DrawTextEx(font, "(P)\t Pause game", {TT_SIDEBAR_OFFSET_X, TT_NEXT_BLOCK_OFFSET_Y + TT_CELL_SIZE * 7}, 20, 5, GRAY);
-	DrawTextEx(font, "(R)\t Reset game", { TT_SIDEBAR_OFFSET_X, TT_NEXT_BLOCK_OFFSET_Y + TT_CELL_SIZE * 8 }, 20, 5, GRAY);
+	DrawTextEx(font, "[P]\t Pause game", {TT_SIDEBAR_X, TT_NEXT_BLOCK_Y + TT_CELL_SIZE * 7}, 20, 5, GRAY);
+	DrawTextEx(font, "[R]\t Reset game", { TT_SIDEBAR_X, TT_NEXT_BLOCK_Y + TT_CELL_SIZE * 8 }, 20, 5, GRAY);
+	DrawTextEx(font, "[X]\t Exit game", { TT_SIDEBAR_X, TT_NEXT_BLOCK_Y + TT_CELL_SIZE * 9 }, 20, 5, GRAY);
 }
 
 void Tetris::UpdateLevel() {

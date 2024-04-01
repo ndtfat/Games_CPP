@@ -2,9 +2,8 @@
 #include <string>
 #include "raylib.h"
 #include "defines.h"
+#include "menu.h"
 #include "tetris.h"
-
-typedef enum Game {TETRIS, SNAKE, FRUIT_BASKET, INVADOR, MENU};
 
 int main() {
 	InitWindow(SCREEN_W, SCREEN_H, "Games");
@@ -13,7 +12,7 @@ int main() {
 	Font font = LoadFontEx("Font/monogram.ttf", 64, 0, 0);
 	std::string title = "GAMES";
 
-	Game playedGame = TETRIS;
+	Menu menu = Menu(font);
 	Tetris tetris = Tetris();
 
 	while (!WindowShouldClose()) {
@@ -21,12 +20,17 @@ int main() {
 		ClearBackground(RAYWHITE);
 
 		// draw title
-		Vector2 titleOffset = {SCREEN_W / 2 - MeasureText(title.c_str(), TITLE_SIZE)/2, 10};
+		Vector2 titleOffset = {SCREEN_W / 2 - MeasureText(title.c_str(), TITLE_SIZE)/2, 30};
 		DrawTextEx(font, title.c_str(), titleOffset, TITLE_SIZE, 10, GRAY);
+
+		// Press X to escape current game
+		menu.HandleExitGame();
+
 		// start game
-		switch (playedGame) {
+		switch (menu.gameOpen) {
 			case MENU:
 				title = "GAMES";
+				menu.Draw();
 				break;
 			case TETRIS:
 				title = "TETRIS";

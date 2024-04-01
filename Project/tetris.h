@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include "board.h"
-#include "blocks.cpp"
+#include "block.h"
 
 class Tetris {
 public:
