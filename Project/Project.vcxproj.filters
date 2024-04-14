@@ -39,7 +39,10 @@
     <ClCompile Include="blocks.cpp">
       <Filter>Source Files\Tetris</Filter>
     </ClCompile>
-    <ClCompile Include="define.cpp">
+    <ClCompile Include="menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -58,6 +61,12 @@
     </ClInclude>
     <ClInclude Include="tetris.h">
       <Filter>Header Files\Tetris</Filter>
+    </ClInclude>
+    <ClInclude Include="menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
