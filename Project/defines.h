@@ -1,4 +1,6 @@
 #pragma once
+#include <raylib.h>
+#include <deque>
 
 #define TITLE_SIZE 50
 #define SCREEN_W 1300
@@ -31,4 +33,14 @@
 #define NEXT_BLOCK_HEIGHT (TETRIS_SIDEBAR_WIDTH)
 #define NEXT_BLOCK_OFFSET_Y (TETRIS_SIDEBAR_OFFSET_Y + CELL_SIZE + SIDEBAR_GAP)
 
+
+
+
 //----------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------
+//SNAKE GAME 
+//----------------------------------------------------------------------------------------------------------------------
+#define cellSize 25
+#define cellCount 20
+#define Offset 150

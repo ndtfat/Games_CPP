@@ -12,3 +12,9 @@
 
 #define WIDTH (CELL_SIZE * NUM_COLS) + (PADDING * 2)
 #define HEIGHT (CELL_SIZE * NUM_ROWS) + PADDING
+
+//SNAKE GAME
+
+#define cellSize 30
+#define cellCount 25
+#define Offset 100

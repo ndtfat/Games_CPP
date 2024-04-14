@@ -5,11 +5,11 @@
 #include "tetris.h"
 #include "defines.h"
 
-double lastUpdateTime = 0;
+double LastUpdateTime = 0;
 bool TimeOut(double interval) {
 	double currentTime = GetTime();
-	if (currentTime - lastUpdateTime >= interval) {
-		lastUpdateTime = currentTime;
+	if (currentTime - LastUpdateTime >= interval) {
+		LastUpdateTime = currentTime;
 		return true;
 	}
 	return false;

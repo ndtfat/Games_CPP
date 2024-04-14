@@ -19,6 +19,12 @@
     <Filter Include="Header Files\Tetris">
       <UniqueIdentifier>{c4bca6cf-1d4f-46b8-a5d6-b07d78cadf95}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\snake">
+      <UniqueIdentifier>{8bcc7bc6-58b1-4a58-a737-062e41242025}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\snake">
+      <UniqueIdentifier>{9e0cd8d6-217c-4eba-97a5-dcac38ed4e91}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -42,6 +48,21 @@
     <ClCompile Include="define.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="snakemove.cpp">
+      <Filter>Source Files\snake</Filter>
+    </ClCompile>
+    <ClCompile Include="food.cpp">
+      <Filter>Source Files\snake</Filter>
+    </ClCompile>
+    <ClCompile Include="snake.cpp">
+      <Filter>Source Files\snake</Filter>
+    </ClCompile>
+    <ClCompile Include="snakeboard.cpp">
+      <Filter>Source Files\snake</Filter>
+    </ClCompile>
+    <ClCompile Include="functs.cpp">
+      <Filter>Source Files\snake</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="board.h">
@@ -56,8 +77,23 @@
     <ClInclude Include="defines.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="snakemove.h">
+      <Filter>Header Files\snake</Filter>
+    </ClInclude>
     <ClInclude Include="tetris.h">
-      <Filter>Header Files\Tetris</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="food.h">
+      <Filter>Header Files\snake</Filter>
+    </ClInclude>
+    <ClInclude Include="snake.h">
+      <Filter>Header Files\snake</Filter>
+    </ClInclude>
+    <ClInclude Include="snakeboard.h">
+      <Filter>Header Files\snake</Filter>
+    </ClInclude>
+    <ClInclude Include="functs.h">
+      <Filter>Header Files\snake</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
