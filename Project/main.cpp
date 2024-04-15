@@ -44,8 +44,8 @@ int main() {
 				title = "FRUIT BASKET";
 				//fruitBasket.start
 				break;
-			case INVADOR:
-				title = "INVADOR";
+			case PONG_GAME:
+				title = "PONG_GAME";
 				//invador.start
 				break;
 			default:
