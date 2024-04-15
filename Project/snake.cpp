@@ -27,13 +27,15 @@ void Snake::start() {
     HandleInput();
     CheckCollisionWithFood();
     CheckCollisionWithEdges();
-    CheckCollisionWithTail();    
+    CheckCollisionWithTail();
+    HandleKeyPressed();
 }
 void Snake::Draw() {
     snakemove.Draw();
     food.Draw();
     snakeboard.Draw();
-    DrawText(TextFormat("Score ""%i", score), SNAKE_Offset + 610, SNAKE_Offset + SNAKE_cellCount * SNAKE_cellSize-570, 40, BLACK);
+    // draw score
+    DrawText(TextFormat("Score:"" %i", score), SNAKE_Offset + 660, SNAKE_Offset + SNAKE_cellCount * SNAKE_cellSize-530, 20, BLACK);
 }
 void Snake::Update()
 { 
@@ -63,6 +65,13 @@ void Snake::HandleInput() {
     {
         snakemove.direction = { -1,0 };
         running = true;
+    }
+}
+void Snake::HandleKeyPressed() {
+    int keyPressed = GetKeyPressed();
+    if (keyPressed == KEY_R) {
+        snakemove.Reset();
+        food.position=food.GenerateRandomPos(snakemove.body);
     }
 }
 void Snake::CheckCollisionWithFood() {

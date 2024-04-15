@@ -63,9 +63,6 @@
     <ClCompile Include="snakeboard.cpp">
       <Filter>Source Files\snake</Filter>
     </ClCompile>
-    <ClCompile Include="functs.cpp">
-      <Filter>Source Files\snake</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="board.h">
@@ -93,9 +90,6 @@
       <Filter>Header Files\snake</Filter>
     </ClInclude>
     <ClInclude Include="snakeboard.h">
-      <Filter>Header Files\snake</Filter>
-    </ClInclude>
-    <ClInclude Include="functs.h">
       <Filter>Header Files\snake</Filter>
     </ClInclude>
     <ClInclude Include="menu.h">

@@ -20,5 +20,6 @@ public:
 	void CheckCollisionWithEdges();
 	void CheckCollisionWithTail();
 	void GameOver();
+	void HandleKeyPressed();
 	bool running = true;
 };
