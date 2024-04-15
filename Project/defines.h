@@ -1,4 +1,6 @@
 #pragma once
+#include <raylib.h>
+#include <deque>
 
 #define TITLE_SIZE 50
 #define SCREEN_W 1300
@@ -44,3 +46,10 @@ typedef enum Game { TETRIS, SNAKE, FRUIT_BASKET, INVADOR, MENU };
 #define TT_NEXT_BLOCK_HEIGHT (TT_SIDEBAR_WIDTH)
 #define TT_NEXT_BLOCK_Y (TT_Y + TT_CELL_SIZE + TT_SIDEBAR_GAP)
 //----------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------
+//SNAKE GAME 
+//----------------------------------------------------------------------------------------------------------------------
+#define SNAKE_cellSize 25
+#define SNAKE_cellCount 20
+#define SNAKE_Offset 150

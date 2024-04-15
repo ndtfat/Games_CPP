@@ -4,6 +4,7 @@
 #include "defines.h"
 #include "menu.h"
 #include "tetris.h"
+#include "snake.h"
 
 int main() {
 	InitWindow(SCREEN_W, SCREEN_H, "Games");
@@ -14,11 +15,11 @@ int main() {
 
 	Menu menu = Menu(font);
 	Tetris tetris = Tetris();
+	Snake snake = Snake();
 
 	while (!WindowShouldClose()) {
 		BeginDrawing();
 		ClearBackground(RAYWHITE);
-
 		// draw title
 		Vector2 titleOffset = {SCREEN_W / 2 - MeasureText(title.c_str(), TITLE_SIZE)/2, 30};
 		DrawTextEx(font, title.c_str(), titleOffset, TITLE_SIZE, 10, GRAY);
@@ -38,7 +39,7 @@ int main() {
 				break;
 			case SNAKE:
 				title = "SNAKE";
-				//snake.start
+				snake.start();
 				break;
 			case FRUIT_BASKET:
 				title = "FRUIT BASKET";

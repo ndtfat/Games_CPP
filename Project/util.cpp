@@ -1,8 +1,18 @@
 #include "util.h"
 #include "raylib.h"
+#include <raymath.h>
+
+bool ElementInDeque(Vector2 element, std::deque<Vector2> deque) {
+	for (unsigned int i = 0; i < deque.size(); ++i) {
+		if (Vector2Equals(deque[i], element)) {
+			return true;
+		}
+	}
+	return false;
+}
+
 
 double lastUpdateTime = 0;
-
 // Function to check if a timeout has occurred
 bool TimeOut(double interval) {
     double currentTime = GetTime(); // Assuming GetTime() is defined somewhere
