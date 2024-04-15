@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -130,27 +130,28 @@
     <ClCompile Include="block.cpp" />
     <ClCompile Include="blocks.cpp" />
     <ClCompile Include="board.cpp" />
-    <ClCompile Include="define.cpp" />
     <ClCompile Include="food.cpp" />
-    <ClCompile Include="functs.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="menu.cpp" />
     <ClCompile Include="position.cpp" />
     <ClCompile Include="snake.cpp" />
     <ClCompile Include="snakeboard.cpp" />
     <ClCompile Include="snakemove.cpp" />
     <ClCompile Include="tetris.cpp" />
+    <ClCompile Include="util.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="block.h" />
     <ClInclude Include="board.h" />
     <ClInclude Include="defines.h" />
+    <ClInclude Include="menu.h" />
     <ClInclude Include="food.h" />
-    <ClInclude Include="functs.h" />
     <ClInclude Include="position.h" />
     <ClInclude Include="snake.h" />
     <ClInclude Include="snakeboard.h" />
     <ClInclude Include="snakemove.h" />
     <ClInclude Include="tetris.h" />
+    <ClInclude Include="util.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

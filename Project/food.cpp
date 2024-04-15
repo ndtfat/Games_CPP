@@ -3,7 +3,7 @@
 #include "defines.h"
 #include <deque>
 #include <raymath.h>
-#include "functs.h"
+#include "util.h"
 using namespace std;
 Food::Food(deque<Vector2> snakebody) {
 	Image image = LoadImage("C:/Users/ADMIN/Desktop/OPP Project/SnakeGame/Games_CPP/Graphics/food.png");

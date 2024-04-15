@@ -7,7 +7,7 @@
 #include <raymath.h>
 #include<raylib.h>
 #include <iostream>
-#include "functs.h"
+#include "util.h"
 using namespace std;
 
 Snake::Snake() {
@@ -39,7 +39,7 @@ void Snake::Update()
     
 }
 void Snake::HandleInput() {
-    if (EventTriggered(0.5))
+    if (TimeOut(0.5))
     {
         snakemove.Update();
     }
