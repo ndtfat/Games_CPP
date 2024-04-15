@@ -10,7 +10,7 @@ void Snakemove::Draw() {
 	{
 		float x = body[i].x;
 		float y = body[i].y;
-		Rectangle segment = Rectangle{ Offset+260 + x * cellSize,Offset-30+ y * cellSize, (float)cellSize, (float)cellSize };
+		Rectangle segment = Rectangle{ SNAKE_Offset+260 + x * SNAKE_cellSize,SNAKE_Offset-30+ y * SNAKE_cellSize, (float)SNAKE_cellSize, (float)SNAKE_cellSize };
 		DrawRectangleRounded(segment, 0.5, 6, DARKGREEN);
 	
 	}
@@ -21,8 +21,7 @@ void Snakemove::Update() {
 		addSegment = false;
 	}
 	else {
-		body.pop_back();
-		
+		body.pop_back();		
 	}
 }
 void Snakemove::Reset() {

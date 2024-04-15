@@ -13,11 +13,11 @@ Food::Food(deque<Vector2> snakebody) {
 }
 
 void Food::Draw() {
-	DrawTexture(texture, Offset+260+position.x * cellSize, Offset-30+position.y * cellSize, WHITE);
+	DrawTexture(texture, SNAKE_Offset+260+position.x * SNAKE_cellSize, SNAKE_Offset-30+position.y * SNAKE_cellSize, WHITE);
 } 
 Vector2 Food::GenerateRandomCell() {
-	float x = GetRandomValue(0, cellCount - 1);
-	float y = GetRandomValue(0, cellCount - 1);
+	float x = GetRandomValue(0, SNAKE_cellCount - 1);
+	float y = GetRandomValue(0, SNAKE_cellCount - 1);
 	return Vector2{ x,y };
 }
 Vector2 Food::GenerateRandomPos(deque<Vector2> snakeBody) {

@@ -22,17 +22,18 @@ Snake::~Snake() {
 }
 
 void Snake::start() {
-        Draw();
-        HandleInput();
-        CheckCollisionWithFood();
-        CheckCollisionWithEdges();
-        CheckCollisionWithTail();    
+    snakeboard.Init();
+    Draw();
+    HandleInput();
+    CheckCollisionWithFood();
+    CheckCollisionWithEdges();
+    CheckCollisionWithTail();    
 }
 void Snake::Draw() {
     snakemove.Draw();
     food.Draw();
     snakeboard.Draw();
-    DrawText(TextFormat("Score ""%i", score), Offset + 610, Offset + cellCount * cellSize-570, 40, BLACK);
+    DrawText(TextFormat("Score ""%i", score), SNAKE_Offset + 610, SNAKE_Offset + SNAKE_cellCount * SNAKE_cellSize-570, 40, BLACK);
 }
 void Snake::Update()
 { 
@@ -76,11 +77,11 @@ void Snake::CheckCollisionWithFood() {
     }
 }
 void Snake::CheckCollisionWithEdges() {
-    if (snakemove.body[0].x == cellCount || snakemove.body[0].x == -1)
+    if (snakemove.body[0].x == SNAKE_cellCount || snakemove.body[0].x == -1)
     {
         GameOver();
     }
-    if (snakemove.body[0].y == cellCount || snakemove.body[0].y == -1)
+    if (snakemove.body[0].y == SNAKE_cellCount || snakemove.body[0].y == -1)
     {
         GameOver();
     }
@@ -92,6 +93,7 @@ void Snake::GameOver()
     running = false;
     score = 0;
     PlaySound(wallSound);
+
 }
 
 void Snake::CheckCollisionWithTail()

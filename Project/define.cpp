@@ -15,6 +15,6 @@
 
 //SNAKE GAME
 
-#define cellSize 30
-#define cellCount 25
-#define Offset 100
+#define SNAKE_cellSize 25
+#define SNAKE_cellCount 20
+#define SNAKE_Offset 150

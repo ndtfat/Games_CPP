@@ -50,6 +50,6 @@ typedef enum Game { TETRIS, SNAKE, FRUIT_BASKET, INVADOR, MENU };
 //----------------------------------------------------------------------------------------------------------------------
 //SNAKE GAME 
 //----------------------------------------------------------------------------------------------------------------------
-#define cellSize 25
-#define cellCount 20
-#define Offset 150
+#define SNAKE_cellSize 25
+#define SNAKE_cellCount 20
+#define SNAKE_Offset 150

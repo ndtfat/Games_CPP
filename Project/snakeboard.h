@@ -6,4 +6,5 @@ class snakeBoard {
 public:
 	snakeBoard();
 	void Draw();
+	void Init();
 };
