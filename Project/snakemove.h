@@ -1,6 +1,7 @@
 #pragma once
 #include <raylib.h>
 #include <deque>
+#include "defines.h"
 using namespace std;
 class Snakemove {
 public:
@@ -9,6 +10,9 @@ public:
 	void Draw();
 	Snakemove();
 	void Update();
+	void Loop();
 	bool addSegment = false;
 	void Reset();
+	int stepCount = 0;
+	int cellsMoved = 0;
 };
