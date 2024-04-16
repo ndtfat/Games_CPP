@@ -3,10 +3,10 @@
 #include "raylib.h"
 using namespace std;
 
-class Board {
+class TetrisBoard {
 public:
     int grid[20][10];
-    Board();
+    TetrisBoard();
     void Initialize();
     void Draw();
     bool IsCellOutside(int row, int col);

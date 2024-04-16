@@ -1,18 +1,18 @@
-#include "board.h"
+#include "tetrisBoard.h"
 #include "blocks.cpp"
 #include "defines.h"
 
-Board::Board() {
+TetrisBoard::TetrisBoard() {
 	Initialize();
 }
 
-void Board::Initialize() {
+void TetrisBoard::Initialize() {
 	for (int r = 0; r < TT_NUM_ROWS; r++)
 		for (int c = 0; c < TT_NUM_COLS; c++)
 			grid[r][c] = 0;
 }
 
-void Board::Draw() {
+void TetrisBoard::Draw() {
 	DrawRectangle(TT_BOARD_X, TT_Y, TT_BOARD_WIDTH, TT_BOARD_HEIGHT, LIGHTGRAY);
 
 	for (int r = 0; r < TT_NUM_ROWS; r++)
@@ -28,18 +28,18 @@ void Board::Draw() {
 
 }
 
-bool Board::IsCellOutside(int row, int col) {
+bool TetrisBoard::IsCellOutside(int row, int col) {
 	if (row >= 0 && row < TT_NUM_ROWS && col >= 0 && col < TT_NUM_COLS) {
 		return false;
 	}
 	return true;
 }
 
-bool Board::IsCellEmpty(int row, int col) {
+bool TetrisBoard::IsCellEmpty(int row, int col) {
 	return grid[row][col] == 0;
 }
 
-bool Board::IsRowFull(int row) {
+bool TetrisBoard::IsRowFull(int row) {
 	for (int col = 0; col < TT_NUM_COLS; col++) {
 		if (grid[row][col] == 0)
 			return false;
@@ -47,20 +47,20 @@ bool Board::IsRowFull(int row) {
 	return true;
 }
 
-void Board::ClearRow(int row) {
+void TetrisBoard::ClearRow(int row) {
 	for (int col = 0; col < TT_NUM_COLS; col++) {
 		grid[row][col] = 0;
 	}
 }
 
-void Board::MoveRowDown(int row, int numRow) {
+void TetrisBoard::MoveRowDown(int row, int numRow) {
 	for (int col = 0; col < TT_NUM_COLS; col++) {
 		grid[row + numRow][col] = grid[row][col];
 		grid[row][col] = 0;
 	}
 }
 
-int Board::ClearRowsFull() {
+int TetrisBoard::ClearRowsFull() {
 	int numClearedRows = 0;
 	for (int row = TT_NUM_ROWS - 1; row >= 0; row--) {
 		if (IsRowFull(row)) {
