@@ -15,11 +15,12 @@ void Snakemove::Draw() {
 	}
 }
 void Snakemove::Loop() {
-    body.push_front(Vector2Add(body[0], direction));
-    body.pop_back();
-
-    cellsMoved++;
-
+	if (TimeOut(0.5))
+	{
+		body.push_front(Vector2Add(body[0], direction));
+		body.pop_back();
+		cellsMoved++;
+	}
     if (cellsMoved == 3) {
         Vector2 newDirection = { direction.y, -direction.x };
         direction = newDirection;
