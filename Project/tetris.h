@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include "board.h"
+#include "tetrisBoard.h"
 #include "block.h"
 
 class Tetris {
@@ -9,7 +9,7 @@ public:
 	int score;
 	bool pause;
 	bool gameOver;
-	Board board;
+	TetrisBoard board;
 	
 	Tetris();
 	void Start(Font font);

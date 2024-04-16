@@ -10,7 +10,7 @@ Tetris::Tetris() {
 	level = 0;
 	pause = false;
 	gameOver = false;
-	board = Board();
+	board = TetrisBoard();
 	blocks = { IBlock(), JBlock(), LBlock(), OBlock(), SBlock(), TBlock(), ZBlock() };
 	currBlock = GetRandomBlock(); 
 	nextBlock = GetRandomBlock();
