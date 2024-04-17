@@ -127,8 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Basket.cpp" />
     <ClCompile Include="block.cpp" />
     <ClCompile Include="blocks.cpp" />
+    <ClCompile Include="FB_Board.cpp" />
+    <ClCompile Include="FruitBasket.cpp" />
     <ClCompile Include="tetrisBoard.cpp" />
     <ClCompile Include="food.cpp" />
     <ClCompile Include="main.cpp" />
@@ -142,6 +145,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="block.h" />
+    <ClInclude Include="FruitBasket.h" />
+    <ClInclude Include="FB_Board.h" />
+    <ClInclude Include="Basket.h" />
     <ClInclude Include="tetrisBoard.h" />
     <ClInclude Include="defines.h" />
     <ClInclude Include="menu.h" />
