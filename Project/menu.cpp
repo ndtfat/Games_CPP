@@ -57,6 +57,9 @@ void Menu::DrawGameBox(int x, int y, Game game) {
 			case TETRIS:
 				DrawTetris();
 				break;
+			case SNAKE:
+				DrawSnake();
+				break;
 		}
 	}
 }
@@ -99,3 +102,9 @@ void Menu::HandleExitGame() {
 
 
 //
+
+void Menu::DrawSnake() {
+	if (TimeOut(1)) {
+		snakeLoop.Loop();
+	}
+}
