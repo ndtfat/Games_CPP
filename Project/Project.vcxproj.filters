@@ -33,9 +33,6 @@
     <ClCompile Include="tetris.cpp">
       <Filter>Source Files\Tetris</Filter>
     </ClCompile>
-    <ClCompile Include="board.cpp">
-      <Filter>Source Files\Tetris</Filter>
-    </ClCompile>
     <ClCompile Include="position.cpp">
       <Filter>Source Files\Tetris</Filter>
     </ClCompile>
@@ -63,11 +60,11 @@
     <ClCompile Include="snakeboard.cpp">
       <Filter>Source Files\snake</Filter>
     </ClCompile>
+    <ClCompile Include="tetrisBoard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="board.h">
-      <Filter>Header Files\Tetris</Filter>
-    </ClInclude>
     <ClInclude Include="block.h">
       <Filter>Header Files\Tetris</Filter>
     </ClInclude>
@@ -96,6 +93,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tetrisBoard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

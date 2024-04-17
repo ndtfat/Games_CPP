@@ -11,7 +11,7 @@ void Snakemove::Draw() {
 		float x = body[i].x;
 		float y = body[i].y;
 		Rectangle segment = Rectangle{ SNAKE_Offset+260 + x * SNAKE_cellSize,SNAKE_Offset- 10 + y * SNAKE_cellSize, (float)SNAKE_cellSize, (float)SNAKE_cellSize };
-		DrawRectangleRounded(segment, 0.5, 6, DARKGREEN);	
+		DrawRectangleRounded(segment, 0.5, 6, GRAY);	
 	}
 }
 void Snakemove::Loop() {
@@ -21,7 +21,7 @@ void Snakemove::Loop() {
 		body.pop_back();
 		cellsMoved++;
 	}
-    if (cellsMoved == 3) {
+    if (cellsMoved == 4) {
         Vector2 newDirection = { direction.y, -direction.x };
         direction = newDirection;
         cellsMoved = 0;
@@ -29,19 +29,20 @@ void Snakemove::Loop() {
     for (unsigned int i = 0; i < body.size(); ++i) {
         float x = body[i].x;
         float y = body[i].y;
-        Rectangle segment = Rectangle{ x * SNAKE_cellSize+670, y * SNAKE_cellSize+80, (float)SNAKE_cellSize+5, (float)SNAKE_cellSize };
-        DrawRectangleRounded(segment, 0.7, 6, DARKBROWN);
+        Rectangle segment = Rectangle{ x * SNAKE_cellSize+650, y * SNAKE_cellSize+90, (float)SNAKE_cellSize+5, (float)SNAKE_cellSize };
+        DrawRectangleRounded(segment, 0.7, 6, GRAY);
     }
 }
 void Snakemove::Update() {
 	body.push_front(Vector2Add(body[0], direction));
-	if (addSegment == true){
+	if (addSegment == true) {
 		addSegment = false;
 	}
 	else {
-		body.pop_back();		
+		body.pop_back();
 	}
 }
 void Snakemove::Reset() {
 	body = { Vector2{6,9},Vector2{5,9}, Vector2{4,9} };
+	direction = { 1,0 };
 }

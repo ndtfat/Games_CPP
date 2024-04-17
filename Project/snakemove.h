@@ -11,8 +11,9 @@ public:
 	Snakemove();
 	void Update();
 	void Loop();
-	bool addSegment = false;
 	void Reset();
+	bool addSegment = false;
+private:
 	int stepCount = 0;
 	int cellsMoved = 0;
 };

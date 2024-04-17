@@ -31,32 +31,38 @@ void Snake::start() {
     HandleKeyPressed();
 }
 void Snake::Draw() {
+ 
     snakemove.Draw();
     food.Draw();
     snakeboard.Draw();
     // draw score
-    DrawText(TextFormat("Score:"" %i", score), SNAKE_Offset + 660, SNAKE_Offset + SNAKE_cellCount * SNAKE_cellSize-530, 20, BLACK);
+    DrawText(TextFormat("Score:"" %i", score), SNAKE_Offset + 660, SNAKE_Offset + SNAKE_cellCount * SNAKE_cellSize - 530, 20, BLACK);
 }
 void Snake::Update()
-{ 
-    
+{
 }
 void Snake::HandleInput() {
-    if (TimeOut(0.5))
+    if (IsKeyPressed(KEY_P))
+    {
+        paused = !paused;
+    }
+    if (TimeOut(0.3) && !paused)
     {
         snakemove.Update();
+
     }
-    if (IsKeyPressed(KEY_UP)&& snakemove.direction.y !=1)
+ 
+    if (IsKeyPressed(KEY_UP) && snakemove.direction.y != 1)
     {
         snakemove.direction = { 0,-1 };
         running = true;
     }
-    if (IsKeyPressed(KEY_DOWN)&& snakemove.direction.y != -1)
+    if (IsKeyPressed(KEY_DOWN) && snakemove.direction.y != -1)
     {
         snakemove.direction = { 0,1 };
         running = true;
     }
-    if (IsKeyPressed(KEY_RIGHT)&& snakemove.direction.x != -1)
+    if (IsKeyPressed(KEY_RIGHT) && snakemove.direction.x != -1)
     {
         snakemove.direction = { 1,0 };
         running = true;
@@ -70,9 +76,9 @@ void Snake::HandleInput() {
 void Snake::HandleKeyPressed() {
     int keyPressed = GetKeyPressed();
     if (keyPressed == KEY_R) {
-        snakemove.Reset();
-        food.position=food.GenerateRandomPos(snakemove.body);
+        GameOver();
     }
+
 }
 void Snake::CheckCollisionWithFood() {
     {
