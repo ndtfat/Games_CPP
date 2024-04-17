@@ -37,6 +37,11 @@ void Snake::Draw() {
     snakeboard.Draw();
     // draw score
     DrawText(TextFormat("Score:"" %i", score), SNAKE_Offset + 660, SNAKE_Offset + SNAKE_cellCount * SNAKE_cellSize - 530, 20, BLACK);
+    if (paused)
+    {
+        snakeboard.Paused();
+        DrawText(TextFormat("Pause"), SNAKE_Offset + 370, SNAKE_Offset + SNAKE_cellCount * SNAKE_cellSize - 330, 100, BROWN);
+    }
 }
 void Snake::Update()
 {
@@ -45,6 +50,7 @@ void Snake::HandleInput() {
     if (IsKeyPressed(KEY_P))
     {
         paused = !paused;
+        
     }
     if (TimeOut(0.3) && !paused)
     {

@@ -7,4 +7,5 @@ public:
 	snakeBoard();
 	void Draw();
 	void Init();
+	void Paused();
 };
