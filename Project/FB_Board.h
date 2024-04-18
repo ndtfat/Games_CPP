@@ -5,6 +5,6 @@ using namespace std;
 class FBBoard {
 public:
 	FBBoard();
-	void Draw();
+	void Draw(int score, int highScore);
 	void Init();
 };

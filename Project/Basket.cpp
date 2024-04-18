@@ -6,7 +6,7 @@
 
 Basket::Basket(/* args */)
 {
-    size = {100, 30};
+    size = {150, 30};
     position = {SCREEN_W/2, SCREEN_H - 100};
 }
 
@@ -21,13 +21,13 @@ void Basket::Draw()
 
 void Basket::Update()
 {
-    if (IsKeyDown(KEY_LEFT))
+    if (IsKeyDown(KEY_LEFT) || IsKeyDown(KEY_A))
     {
-        position.x -= 5;
+        position.x -= 8;
     }
-    if (IsKeyDown(KEY_RIGHT))
+    if (IsKeyDown(KEY_RIGHT) || IsKeyDown(KEY_D))
     {
-        position.x += 5;
+        position.x += 8;
     }
     if (position.x < 0)
     {
@@ -37,4 +37,9 @@ void Basket::Update()
     {
         position.x = SCREEN_W - size.x;
     }
+}
+
+Rectangle Basket::getCollisionRec()
+{
+    return Rectangle{position.x, position.y, size.x, size.y};
 }

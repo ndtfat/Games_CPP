@@ -5,14 +5,15 @@ class Basket
 {
 private:
     /* data */
+public:
     Vector2 size;
     Vector2 position;
-public:
     Basket(/* args */);
     ~Basket();
 
     void Draw();
     void Update();
+    Rectangle getCollisionRec();
 
 };
 
