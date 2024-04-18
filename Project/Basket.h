@@ -5,13 +5,14 @@ class Basket
 {
 private:
     /* data */
-    Texture2D basket;
+    Vector2 size;
     Vector2 position;
-    int score;
 public:
     Basket(/* args */);
     ~Basket();
 
     void Draw();
+    void Update();
+
 };
 

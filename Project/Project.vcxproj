@@ -131,6 +131,7 @@
     <ClCompile Include="block.cpp" />
     <ClCompile Include="blocks.cpp" />
     <ClCompile Include="FB_Board.cpp" />
+    <ClCompile Include="Fruit.cpp" />
     <ClCompile Include="FruitBasket.cpp" />
     <ClCompile Include="tetrisBoard.cpp" />
     <ClCompile Include="food.cpp" />
@@ -145,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="block.h" />
+    <ClInclude Include="Fruit.h" />
     <ClInclude Include="FruitBasket.h" />
     <ClInclude Include="FB_Board.h" />
     <ClInclude Include="Basket.h" />

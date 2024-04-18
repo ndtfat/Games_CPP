@@ -6,17 +6,35 @@
 
 Basket::Basket(/* args */)
 {
-    // basket = LoadTexture("./FB Assets/basket.png");
-    // position = {static_cast<float>(SCREEN_W) / 2 - basket.width / 2, static_cast<float>(SCREEN_H) - basket.height};
-    // score = 0;
+    size = {100, 30};
+    position = {SCREEN_W/2, SCREEN_H - 100};
 }
 
 Basket::~Basket()
 {
-    UnloadTexture(basket);
 }
 
 void Basket::Draw()
 {
-    DrawTexture(basket, position.x, position.y, WHITE);
+    DrawRectangleV(position, size, GRAY);
+}
+
+void Basket::Update()
+{
+    if (IsKeyDown(KEY_LEFT))
+    {
+        position.x -= 5;
+    }
+    if (IsKeyDown(KEY_RIGHT))
+    {
+        position.x += 5;
+    }
+    if (position.x < 0)
+    {
+        position.x = 0;
+    }
+    if (position.x > SCREEN_W - size.x)
+    {
+        position.x = SCREEN_W - size.x;
+    }
 }

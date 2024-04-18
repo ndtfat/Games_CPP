@@ -2,9 +2,12 @@
 #include "FruitBasket.h"
 #include "FB_Board.h"
 #include "Basket.h"
+#include "Fruit.h"
+
 
 FBBoard fbBoard;
 Basket basket;
+Fruit fruit;
 
 FruitBasket::FruitBasket()
 {
@@ -16,7 +19,9 @@ FruitBasket::~FruitBasket()
 
 void FruitBasket::draw()
 {
-    DrawText("Fruit Basket", 100, 100, 20, RED);
+    fbBoard.Draw();
+    basket.Draw();
+    fruit.Draw();
 }
 
 void FruitBasket::start()
@@ -24,11 +29,13 @@ void FruitBasket::start()
 
     fbBoard.Init();
     update();
+    draw();
 }
 
 void FruitBasket::update()
 {
-    basket.Draw();
+    fruit.Update();
+    basket.Update();
 }
 
 void FruitBasket::setScore(int score)

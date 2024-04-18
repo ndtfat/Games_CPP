@@ -78,6 +78,9 @@
     <ClCompile Include="Basket.cpp">
       <Filter>Source Files\FB</Filter>
     </ClCompile>
+    <ClCompile Include="Fruit.cpp">
+      <Filter>Source Files\FB</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="block.h">
@@ -120,6 +123,9 @@
       <Filter>Header Files\FB</Filter>
     </ClInclude>
     <ClInclude Include="Basket.h">
+      <Filter>Header Files\FB</Filter>
+    </ClInclude>
+    <ClInclude Include="Fruit.h">
       <Filter>Header Files\FB</Filter>
     </ClInclude>
   </ItemGroup>
