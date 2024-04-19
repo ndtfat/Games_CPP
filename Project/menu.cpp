@@ -17,7 +17,7 @@ void Menu::Draw() {
 	DrawGameBox(GAME_BOX_1_X, GAME_BOX_1_Y, TETRIS);
 	DrawGameBox(GAME_BOX_2_X, GAME_BOX_1_Y, SNAKE);
 	DrawGameBox(GAME_BOX_1_X, GAME_BOX_2_Y, FRUIT_BASKET);
-	DrawGameBox(GAME_BOX_2_X, GAME_BOX_2_Y, INVADOR);
+	DrawGameBox(GAME_BOX_2_X, GAME_BOX_2_Y, PONG);
 }
 
 void Menu::DrawGameBox(int x, int y, Game game) {
@@ -52,14 +52,22 @@ void Menu::DrawGameBox(int x, int y, Game game) {
 		if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
 			gameOpen = game;
 		}
-
+		Vector2 hint = MeasureTextEx(font, "Click to play", 20, 5); 
+		Vector2 hintOffset = {
+				(float)x + GAME_BOX_W / 2 + MN_PADDING - hint.x / 2,
+				(float)y + GAME_BOX_H / 2 + MN_PADDING - hint.y / 2 - hint.y - 5
+		};
 		switch (game) {
 			case TETRIS:
 				DrawTetris();
+				DrawTextEx(font, "[Click to play]", { hintOffset.x, hintOffset.y + TT_CELL_SIZE * 3 }, 20, 5, GRAY);
 				break;
 			case SNAKE:
 				DrawSnake();
+				DrawTextEx(font, "[Click to play]", { hintOffset.x, hintOffset.y + TT_CELL_SIZE * 3 }, 20, 5, GRAY);
 				break;
+			default:
+				DrawTextEx(font, "[Click to play]", hintOffset, 20, 5, GRAY);
 		}
 	}
 }

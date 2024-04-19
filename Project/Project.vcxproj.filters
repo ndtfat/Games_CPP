@@ -66,9 +66,6 @@
     <ClCompile Include="snakeboard.cpp">
       <Filter>Source Files\snake</Filter>
     </ClCompile>
-    <ClCompile Include="tetrisBoard.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="FruitBasket.cpp">
       <Filter>Source Files\FB</Filter>
     </ClCompile>
@@ -80,6 +77,9 @@
     </ClCompile>
     <ClCompile Include="Fruit.cpp">
       <Filter>Source Files\FB</Filter>
+    </ClCompile>
+    <ClCompile Include="tetrisBoard.cpp">
+      <Filter>Source Files\Tetris</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -94,9 +94,6 @@
     </ClInclude>
     <ClInclude Include="snakemove.h">
       <Filter>Header Files\snake</Filter>
-    </ClInclude>
-    <ClInclude Include="tetris.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="food.h">
       <Filter>Header Files\snake</Filter>
@@ -113,9 +110,6 @@
     <ClInclude Include="util.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="tetrisBoard.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="FruitBasket.h">
       <Filter>Header Files\FB</Filter>
     </ClInclude>
@@ -127,6 +121,12 @@
     </ClInclude>
     <ClInclude Include="Fruit.h">
       <Filter>Header Files\FB</Filter>
+    </ClInclude>
+    <ClInclude Include="tetrisBoard.h">
+      <Filter>Header Files\Tetris</Filter>
+    </ClInclude>
+    <ClInclude Include="tetris.h">
+      <Filter>Header Files\Tetris</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

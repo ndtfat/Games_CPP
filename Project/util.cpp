@@ -31,8 +31,8 @@ const char* getGameName(Game game) {
 		return "SNAKE";
 	case FRUIT_BASKET:
 		return "FRUIT BASKET";
-	case INVADOR:
-		return "INVADOR";
+	case PONG:
+		return "PONG";
 	default:
 		return "GAME_NAME";
 	}
@@ -46,7 +46,7 @@ const char* getAuthorName(Game game) {
 		return "[Hung Thai]";
 	case FRUIT_BASKET:
 		return "[Thang Ho]";
-	case INVADOR:
+	case PONG:
 		return "[Thai Ngo]";
 	default:
 		return "Phat Nguyen";

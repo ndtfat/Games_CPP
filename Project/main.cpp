@@ -49,8 +49,8 @@ int main() {
 
 				//fruitBasket.start
 				break;
-			case INVADOR:
-				title = "INVADOR";
+			case PONG:
+				title = "PONG";
 				//invador.start
 				break;
 			default:

@@ -21,6 +21,4 @@ private:
 	Block GetTetrisBlocksLoop();
 	void DrawTetris();
 	void DrawSnake();
-	void DrawFuitBasket();
-	void DrawInvador();
 };
