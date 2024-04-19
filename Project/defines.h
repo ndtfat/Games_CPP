@@ -53,3 +53,15 @@ typedef enum Game { TETRIS, SNAKE, FRUIT_BASKET, INVADOR, MENU };
 #define SNAKE_cellSize 25
 #define SNAKE_cellCount 20
 #define SNAKE_Offset 150
+
+
+
+
+//----------------------------------------------------------------------------------------------------------------------
+//FruitBasket GAME
+//----------------------------------------------------------------------------------------------------------------------
+
+#define FB_Board_W 480
+#define FB_Board_H 600
+#define FB_Offset 150
+

@@ -5,6 +5,7 @@
 #include "menu.h"
 #include "tetris.h"
 #include "snake.h"
+#include "FruitBasket.h"
 
 int main() {
 	InitWindow(SCREEN_W, SCREEN_H, "Games");
@@ -16,6 +17,7 @@ int main() {
 	Menu menu = Menu(font);
 	Tetris tetris = Tetris();
 	Snake snake = Snake();
+	FruitBasket fruitBasket = FruitBasket();
 
 	while (!WindowShouldClose()) {
 		BeginDrawing();
@@ -43,6 +45,8 @@ int main() {
 				break;
 			case FRUIT_BASKET:
 				title = "FRUIT BASKET";
+				fruitBasket.start();
+
 				//fruitBasket.start
 				break;
 			case INVADOR:
