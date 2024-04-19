@@ -5,7 +5,10 @@ Rectangle innerRect = { (float)SNAKE_Offset + 260, (float)SNAKE_Offset - 10, (fl
 snakeBoard::snakeBoard() {
 }
 void snakeBoard::Init() {
-	DrawRectangleRec(innerRect, LIGHTGRAY);
+	DrawRectangleRec(innerRect, WHITE);
+}
+void snakeBoard::Paused() {
+	DrawRectangleRec(innerRect, Fade(WHITE, 0.5f));
 }
 void snakeBoard::Draw() {
 	//draw title

@@ -22,4 +22,5 @@ public:
 	void GameOver();
 	void HandleKeyPressed();
 	bool running = true;
+	bool paused = false;
 };

@@ -104,7 +104,5 @@ void Menu::HandleExitGame() {
 //
 
 void Menu::DrawSnake() {
-	if (TimeOut(1)) {
-		snakeLoop.Loop();
-	}
+	snakeLoop.Loop();
 }
