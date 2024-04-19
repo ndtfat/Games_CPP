@@ -6,7 +6,7 @@
 #include "tetris.h"
 #include "snake.h"
 #include "FruitBasket.h"
-
+#include "PongGame.h"
 int main() {
 	InitWindow(SCREEN_W, SCREEN_H, "Games");
 	SetTargetFPS(60);
@@ -18,7 +18,7 @@ int main() {
 	Tetris tetris = Tetris();
 	Snake snake = Snake();
 	FruitBasket fruitBasket = FruitBasket();
-
+	PongGame pong = PongGame();
 	while (!WindowShouldClose()) {
 		BeginDrawing();
 		ClearBackground(RAYWHITE);
@@ -49,9 +49,10 @@ int main() {
 
 				//fruitBasket.start
 				break;
-			case INVADOR:
-				title = "INVADOR";
-				//invador.start
+			case PONG:
+				title = "PONG";
+				pong.start();
+
 				break;
 			default:
 				title = "GAMES";

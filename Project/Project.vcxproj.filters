@@ -31,6 +31,12 @@
     <Filter Include="Header Files\FB">
       <UniqueIdentifier>{a65a6ea8-9826-48b0-9415-eb2193f3d14a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\pong">
+      <UniqueIdentifier>{92e693e7-5139-45e3-a119-140a2e9f5801}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\pong">
+      <UniqueIdentifier>{5df60ff4-64bc-43d1-8c4d-ae841597479a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -81,6 +87,21 @@
     <ClCompile Include="Fruit.cpp">
       <Filter>Source Files\FB</Filter>
     </ClCompile>
+    <ClCompile Include="Ball.cpp">
+      <Filter>Source Files\pong</Filter>
+    </ClCompile>
+    <ClCompile Include="Paddle.cpp">
+      <Filter>Source Files\pong</Filter>
+    </ClCompile>
+    <ClCompile Include="CpuPaddle.cpp">
+      <Filter>Source Files\pong</Filter>
+    </ClCompile>
+    <ClCompile Include="PongGame.cpp">
+      <Filter>Source Files\pong</Filter>
+    </ClCompile>
+    <ClCompile Include="Score.cpp">
+      <Filter>Source Files\pong</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="block.h">
@@ -127,6 +148,21 @@
     </ClInclude>
     <ClInclude Include="Fruit.h">
       <Filter>Header Files\FB</Filter>
+    </ClInclude>
+    <ClInclude Include="Ball.h">
+      <Filter>Header Files\pong</Filter>
+    </ClInclude>
+    <ClInclude Include="Paddle.h">
+      <Filter>Header Files\pong</Filter>
+    </ClInclude>
+    <ClInclude Include="CpuPaddle.h">
+      <Filter>Header Files\pong</Filter>
+    </ClInclude>
+    <ClInclude Include="PongGame.h">
+      <Filter>Header Files\pong</Filter>
+    </ClInclude>
+    <ClInclude Include="Score.h">
+      <Filter>Header Files\pong</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

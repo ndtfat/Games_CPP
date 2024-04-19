@@ -17,7 +17,7 @@ void Menu::Draw() {
 	DrawGameBox(GAME_BOX_1_X, GAME_BOX_1_Y, TETRIS);
 	DrawGameBox(GAME_BOX_2_X, GAME_BOX_1_Y, SNAKE);
 	DrawGameBox(GAME_BOX_1_X, GAME_BOX_2_Y, FRUIT_BASKET);
-	DrawGameBox(GAME_BOX_2_X, GAME_BOX_2_Y, INVADOR);
+	DrawGameBox(GAME_BOX_2_X, GAME_BOX_2_Y, PONG);
 }
 
 void Menu::DrawGameBox(int x, int y, Game game) {
