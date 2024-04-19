@@ -21,7 +21,8 @@ void FBBoard::Draw(int score, int highScore)
         textColor = RED;
     }
     DrawTextEx(font, TextFormat("Score: %i", score), {10, 10}, 20, 2, textColor);
-    DrawTextEx(font, TextFormat("High Score: %i", highScore), {10, 40}, 20, 2, textColor);
+    DrawTextEx(font, TextFormat("High Score: %i", highScore), { 10, 40 }, 20, 2, textColor);
+    DrawTextEx(font, TextFormat("[X] - Exit"), { 10, 70 }, 20, 2, textColor);
 }
 
 

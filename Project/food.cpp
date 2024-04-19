@@ -6,7 +6,7 @@
 #include "util.h"
 using namespace std;
 Food::Food(deque<Vector2> snakebody) {
-	Image image = LoadImage("C:/Users/ADMIN/Desktop/OPP Project/SnakeGame/Games_CPP/Graphics/food.png");
+	Image image = LoadImage("G:/Study_Files/OOP-C++/Games_CPP/Graphics/food.png");
 	texture = LoadTextureFromImage(image);
 	UnloadImage(image);
 	position = GenerateRandomPos(snakebody);
