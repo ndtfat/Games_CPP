@@ -127,12 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Ball.cpp" />
     <ClCompile Include="Basket.cpp" />
     <ClCompile Include="block.cpp" />
     <ClCompile Include="blocks.cpp" />
+    <ClCompile Include="CpuPaddle.cpp" />
     <ClCompile Include="FB_Board.cpp" />
     <ClCompile Include="Fruit.cpp" />
     <ClCompile Include="FruitBasket.cpp" />
+    <ClCompile Include="Paddle.cpp" />
+    <ClCompile Include="PongGame.cpp" />
+    <ClCompile Include="Score.cpp" />
     <ClCompile Include="tetrisBoard.cpp" />
     <ClCompile Include="food.cpp" />
     <ClCompile Include="main.cpp" />
@@ -145,11 +150,16 @@
     <ClCompile Include="util.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Ball.h" />
     <ClInclude Include="block.h" />
+    <ClInclude Include="CpuPaddle.h" />
     <ClInclude Include="Fruit.h" />
     <ClInclude Include="FruitBasket.h" />
     <ClInclude Include="FB_Board.h" />
     <ClInclude Include="Basket.h" />
+    <ClInclude Include="Paddle.h" />
+    <ClInclude Include="PongGame.h" />
+    <ClInclude Include="Score.h" />
     <ClInclude Include="tetrisBoard.h" />
     <ClInclude Include="defines.h" />
     <ClInclude Include="menu.h" />
