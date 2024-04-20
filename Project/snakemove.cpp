@@ -29,7 +29,7 @@ void Snakemove::Loop() {
     for (unsigned int i = 0; i < body.size(); ++i) {
         float x = body[i].x;
         float y = body[i].y;
-        Rectangle segment = Rectangle{ x * SNAKE_cellSize+650, y * SNAKE_cellSize+90, (float)SNAKE_cellSize+5, (float)SNAKE_cellSize };
+        Rectangle segment = Rectangle{ x * SNAKE_cellSize+650, y * SNAKE_cellSize+60, (float)SNAKE_cellSize+5, (float)SNAKE_cellSize };
         DrawRectangleRounded(segment, 0.7, 6, GRAY);
     }
 }

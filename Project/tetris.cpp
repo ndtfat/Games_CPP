@@ -7,8 +7,8 @@
 
 Tetris::Tetris() {
 	score = 0;
-	level = 0;
-	pause = false;
+	level = 2;
+	pause = true;
 	gameOver = false;
 	board = TetrisBoard();
 	blocks = { IBlock(), JBlock(), LBlock(), OBlock(), SBlock(), TBlock(), ZBlock() };

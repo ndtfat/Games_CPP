@@ -52,7 +52,6 @@ int main() {
 			case PONG:
 				title = "PONG";
 				pong.start();
-
 				break;
 			default:
 				title = "GAMES";
