@@ -10,25 +10,13 @@
 #include "util.h"
 using namespace std;
 
-Snake::Snake() {
-    InitAudioDevice;
-    eatSound = LoadSound("C:/Users/ADMIN/Desktop/OPP Project/SnakeGame/Games_CPP/Sound/eat.mp3");
-    wallSound = LoadSound("C:/Users/ADMIN/Desktop/OPP Project/SnakeGame/Games_CPP/Sound/wall.mp3");
-}
-Snake::~Snake() {
-    UnloadSound(eatSound);
-    UnloadSound(wallSound);
-    CloseAudioDevice;
-}
-
-void Snake::start() {
+void Snake::Start() {
     snakeboard.Init();
     Draw();
     HandleInput();
     CheckCollisionWithFood();
     CheckCollisionWithEdges();
     CheckCollisionWithTail();
-    HandleKeyPressed();
 }
 void Snake::Draw() {
  
@@ -43,19 +31,24 @@ void Snake::Draw() {
         DrawText(TextFormat("Pause"), SNAKE_Offset + 370, SNAKE_Offset + SNAKE_cellCount * SNAKE_cellSize - 330, 100, BROWN);
     }
 }
-void Snake::Update()
-{
-}
+
 void Snake::HandleInput() {
-    if (IsKeyPressed(KEY_P))
+    int keyPressed = GetKeyPressed();
+    switch (keyPressed)
     {
+    case KEY_R:
+        GameOver();
+        break;
+    case KEY_P:
         paused = !paused;
-        
+        break;
+    default:
+        break;
     }
-    if (TimeOut(0.3) && !paused)
+   
+    if (TimeOut(0.4) && !paused)
     {
         snakemove.Update();
-
     }
  
     if (IsKeyPressed(KEY_UP) && snakemove.direction.y != 1)
@@ -79,13 +72,6 @@ void Snake::HandleInput() {
         running = true;
     }
 }
-void Snake::HandleKeyPressed() {
-    int keyPressed = GetKeyPressed();
-    if (keyPressed == KEY_R) {
-        GameOver();
-    }
-
-}
 void Snake::CheckCollisionWithFood() {
     {
         if (Vector2Equals(snakemove.body[0], food.position))
@@ -93,7 +79,6 @@ void Snake::CheckCollisionWithFood() {
             food.position = food.GenerateRandomPos(snakemove.body);
             snakemove.addSegment = true;
             score++;
-            PlaySound(eatSound);
         }
     }
 }
@@ -113,16 +98,16 @@ void Snake::GameOver()
     food.position = food.GenerateRandomPos(snakemove.body);
     running = false;
     score = 0;
-    PlaySound(wallSound);
-
 }
 
 void Snake::CheckCollisionWithTail()
 {
     deque<Vector2> headlessBody = snakemove.body;
-    headlessBody.pop_front();
-    if (ElementInDeque(snakemove.body[0], headlessBody))
-    {
-        GameOver();
+    if (headlessBody.size() > 3) {
+        headlessBody.pop_front();
+        if (ElementInDeque(snakemove.body[0], headlessBody))
+        {
+            GameOver();
+        }
     }
 }

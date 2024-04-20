@@ -1,166 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Source Files\Tetris">
-      <UniqueIdentifier>{1b49320b-f824-4661-b248-22a2f523ec5b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Tetris">
-      <UniqueIdentifier>{c4bca6cf-1d4f-46b8-a5d6-b07d78cadf95}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\snake">
-      <UniqueIdentifier>{8bcc7bc6-58b1-4a58-a737-062e41242025}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\snake">
-      <UniqueIdentifier>{9e0cd8d6-217c-4eba-97a5-dcac38ed4e91}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\FB">
-      <UniqueIdentifier>{b4046c64-9b4e-475d-95bc-9e53e94d9ed4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\FB">
-      <UniqueIdentifier>{a65a6ea8-9826-48b0-9415-eb2193f3d14a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\pong">
-      <UniqueIdentifier>{92e693e7-5139-45e3-a119-140a2e9f5801}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\pong">
-      <UniqueIdentifier>{5df60ff4-64bc-43d1-8c4d-ae841597479a}</UniqueIdentifier>
-    </Filter>
+    <ClCompile Include="Ball.cpp" />
+    <ClCompile Include="Basket.cpp" />
+    <ClCompile Include="block.cpp" />
+    <ClCompile Include="blocks.cpp" />
+    <ClCompile Include="CpuPaddle.cpp" />
+    <ClCompile Include="FB_Board.cpp" />
+    <ClCompile Include="Fruit.cpp" />
+    <ClCompile Include="FruitBasket.cpp" />
+    <ClCompile Include="Paddle.cpp" />
+    <ClCompile Include="PongGame.cpp" />
+    <ClCompile Include="Score.cpp" />
+    <ClCompile Include="tetrisBoard.cpp" />
+    <ClCompile Include="food.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="menu.cpp" />
+    <ClCompile Include="position.cpp" />
+    <ClCompile Include="snake.cpp" />
+    <ClCompile Include="snakeboard.cpp" />
+    <ClCompile Include="snakemove.cpp" />
+    <ClCompile Include="tetris.cpp" />
+    <ClCompile Include="util.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="tetris.cpp">
-      <Filter>Source Files\Tetris</Filter>
-    </ClCompile>
-    <ClCompile Include="position.cpp">
-      <Filter>Source Files\Tetris</Filter>
-    </ClCompile>
-    <ClCompile Include="block.cpp">
-      <Filter>Source Files\Tetris</Filter>
-    </ClCompile>
-    <ClCompile Include="blocks.cpp">
-      <Filter>Source Files\Tetris</Filter>
-    </ClCompile>
-    <ClCompile Include="menu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="util.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="snakemove.cpp">
-      <Filter>Source Files\snake</Filter>
-    </ClCompile>
-    <ClCompile Include="food.cpp">
-      <Filter>Source Files\snake</Filter>
-    </ClCompile>
-    <ClCompile Include="snake.cpp">
-      <Filter>Source Files\snake</Filter>
-    </ClCompile>
-    <ClCompile Include="snakeboard.cpp">
-      <Filter>Source Files\snake</Filter>
-    </ClCompile>
-    <ClCompile Include="FruitBasket.cpp">
-      <Filter>Source Files\FB</Filter>
-    </ClCompile>
-    <ClCompile Include="FB_Board.cpp">
-      <Filter>Source Files\FB</Filter>
-    </ClCompile>
-    <ClCompile Include="Basket.cpp">
-      <Filter>Source Files\FB</Filter>
-    </ClCompile>
-    <ClCompile Include="Fruit.cpp">
-      <Filter>Source Files\FB</Filter>
-    </ClCompile>
-    <ClCompile Include="Ball.cpp">
-      <Filter>Source Files\pong</Filter>
-    </ClCompile>
-    <ClCompile Include="Paddle.cpp">
-      <Filter>Source Files\pong</Filter>
-    </ClCompile>
-    <ClCompile Include="CpuPaddle.cpp">
-      <Filter>Source Files\pong</Filter>
-    </ClCompile>
-    <ClCompile Include="PongGame.cpp">
-      <Filter>Source Files\pong</Filter>
-    </ClCompile>
-    <ClCompile Include="Score.cpp">
-      <Filter>Source Files\pong</Filter>
-    <ClCompile Include="tetrisBoard.cpp">
-      <Filter>Source Files\Tetris</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="block.h">
-      <Filter>Header Files\Tetris</Filter>
-    </ClInclude>
-    <ClInclude Include="position.h">
-      <Filter>Header Files\Tetris</Filter>
-    </ClInclude>
-    <ClInclude Include="defines.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="snakemove.h">
-      <Filter>Header Files\snake</Filter>
-    </ClInclude>
-    <ClInclude Include="food.h">
-      <Filter>Header Files\snake</Filter>
-    </ClInclude>
-    <ClInclude Include="snake.h">
-      <Filter>Header Files\snake</Filter>
-    </ClInclude>
-    <ClInclude Include="snakeboard.h">
-      <Filter>Header Files\snake</Filter>
-    </ClInclude>
-    <ClInclude Include="menu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="util.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FruitBasket.h">
-      <Filter>Header Files\FB</Filter>
-    </ClInclude>
-    <ClInclude Include="FB_Board.h">
-      <Filter>Header Files\FB</Filter>
-    </ClInclude>
-    <ClInclude Include="Basket.h">
-      <Filter>Header Files\FB</Filter>
-    </ClInclude>
-    <ClInclude Include="Fruit.h">
-      <Filter>Header Files\FB</Filter>
-    </ClInclude>
-    <ClInclude Include="Ball.h">
-      <Filter>Header Files\pong</Filter>
-    </ClInclude>
-    <ClInclude Include="Paddle.h">
-      <Filter>Header Files\pong</Filter>
-    </ClInclude>
-    <ClInclude Include="CpuPaddle.h">
-      <Filter>Header Files\pong</Filter>
-    </ClInclude>
-    <ClInclude Include="PongGame.h">
-      <Filter>Header Files\pong</Filter>
-    </ClInclude>
-    <ClInclude Include="Score.h">
-      <Filter>Header Files\pong</Filter>
-    <ClInclude Include="tetrisBoard.h">
-      <Filter>Header Files\Tetris</Filter>
-    </ClInclude>
-    <ClInclude Include="tetris.h">
-      <Filter>Header Files\Tetris</Filter>
-    </ClInclude>
+    <ClInclude Include="Ball.h" />
+    <ClInclude Include="block.h" />
+    <ClInclude Include="CpuPaddle.h" />
+    <ClInclude Include="Fruit.h" />
+    <ClInclude Include="FruitBasket.h" />
+    <ClInclude Include="FB_Board.h" />
+    <ClInclude Include="Basket.h" />
+    <ClInclude Include="Paddle.h" />
+    <ClInclude Include="PongGame.h" />
+    <ClInclude Include="Score.h" />
+    <ClInclude Include="tetrisBoard.h" />
+    <ClInclude Include="defines.h" />
+    <ClInclude Include="menu.h" />
+    <ClInclude Include="food.h" />
+    <ClInclude Include="position.h" />
+    <ClInclude Include="snake.h" />
+    <ClInclude Include="snakeboard.h" />
+    <ClInclude Include="snakemove.h" />
+    <ClInclude Include="tetris.h" />
+    <ClInclude Include="util.h" />
   </ItemGroup>
 </Project>

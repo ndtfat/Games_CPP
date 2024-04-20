@@ -41,7 +41,7 @@ int main() {
 				break;
 			case SNAKE:
 				title = "SNAKE";
-				snake.start();
+				snake.Start();
 				break;
 			case FRUIT_BASKET:
 				title = "FRUIT BASKET";
