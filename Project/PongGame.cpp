@@ -6,7 +6,7 @@ PongGame::PongGame() {
     bool isGameRunning = true;
     std::cout << "Starting the game" << std::endl;
 
-    InitWindow(screen_width, screen_height, "Pong Game :D");
+    InitWindow(screen_width, screen_height, "MENU");
     SetTargetFPS(60);
     ball.radius = 20;
     ball.x = screen_width / 2;
