@@ -5,7 +5,7 @@
 #include "Paddle.h"
 #include "CpuPaddle.h"
 #include "Score.h"
-
+#include <iostream>
 using namespace std;
 class PongGame {
 public:
@@ -20,4 +20,6 @@ public:
     Color Yellow = Color{ 243, 213, 91, 255 };
     const int screen_width = 1280;
     const int screen_height = 800;
+    bool isGameRunning ;
+    string winner;
 };
