@@ -33,7 +33,8 @@ void FBBoard::Init()
 
 void FBBoard::GameOver(int score, int highScore)
 {
-    DrawTextEx(font, TextFormat("Game Over"), { 300, 250 }, 40, 2, RED);
-    DrawTextEx(font, TextFormat("Score: %i", score), { 300, 270 }, 20, 2, RED);
-    DrawTextEx(font, TextFormat("High Score: %i", highScore), { 400, 270 }, 20, 2, RED);
+    DrawTextEx(font, TextFormat("Game Over"), { 510, 250 }, 70, 2, RED);
+    DrawTextEx(font, TextFormat("Score: %i", score), { 520, 350 }, 20, 2, RED);
+    DrawTextEx(font, TextFormat("High Score: %i", highScore), { 650, 350 }, 20, 2, RED);
+    DrawTextEx(font, TextFormat("Press R to restart or X to exit"), { 500, 400 }, 20, 2, RED);
 }

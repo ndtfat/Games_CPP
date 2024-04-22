@@ -15,7 +15,7 @@ int score = 0;
 int highScore = 0;
 int lives = 3;
 bool penalty = true;
-
+bool gameOver = false;
 FruitBasket::FruitBasket()
 {
 }
@@ -34,17 +34,19 @@ void FruitBasket::draw()
 
 void FruitBasket::start()
 {
-    if(lives==0)
+    if(gameOver)
     {
-        score = 0;
-        lives = 3;
-        penalty = true;
+        fbBoard.GameOver(score, highScore);
+        if (IsKeyPressed(KEY_R))
+        {
+            restart();
+        }
+        return;
     }
     if (score > 20 && penalty)
     {
     penalty = false;
     }
-    fbBoard.Init();
     update();
     draw();
 }
@@ -52,11 +54,11 @@ void FruitBasket::start()
 void FruitBasket::update()
 {
 
-    addScore(greenFruit.Collision(basket.getCollisionRec()));
-    minusScore(redFruit.Collision(basket.getCollisionRec()));
     greenFruit.Update();
     redFruit.Update();
     basket.Update();
+    addScore(greenFruit.Collision(basket.getCollisionRec()));
+    minusScore(redFruit.Collision(basket.getCollisionRec()));
 }
 
 void FruitBasket::setScore(int score)
@@ -88,4 +90,18 @@ void FruitBasket::minusScore(int score)
     {
         this->score = 0;
     }
+    if (lives == 0)
+    {
+        gameOver = true;
+    }
+}
+
+void FruitBasket::restart()
+{
+    score = 0;
+    lives = 3;
+    gameOver = false;
+    penalty = true;
+    greenFruit.Respawn();
+    redFruit.Respawn();
 }

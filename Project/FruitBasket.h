@@ -17,6 +17,7 @@ public:
     void addScore(int score);
     void minusScore(int score);
     void drawScore();
+    void restart();
 
     FruitBasket(/* args */);
     ~FruitBasket();
