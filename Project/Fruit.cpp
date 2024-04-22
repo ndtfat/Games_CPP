@@ -21,7 +21,7 @@ void Fruit::Draw()
 void Fruit::Update()
 {
     position.y += gravity;
-    gravity += 0.3;
+    gravity += gravity*0.04;
     if (position.y > GetScreenHeight())
     {
         Respawn();

@@ -1,6 +1,8 @@
 #pragma once
 #include<raylib.h>
+#include <chrono>
 
+using namespace std::chrono;
 class FruitBasket
 {
 private:

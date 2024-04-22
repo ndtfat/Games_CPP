@@ -13,6 +13,8 @@ RedFruit redFruit;
 
 int score = 0;
 int highScore = 0;
+int lives = 3;
+bool penalty = true;
 
 FruitBasket::FruitBasket()
 {
@@ -24,7 +26,7 @@ FruitBasket::~FruitBasket()
 
 void FruitBasket::draw()
 {
-    fbBoard.Draw(score, highScore);
+    fbBoard.Draw(score, highScore, lives);
     basket.Draw();
     greenFruit.Draw();
     redFruit.Draw();
@@ -32,7 +34,16 @@ void FruitBasket::draw()
 
 void FruitBasket::start()
 {
-
+    if(lives==0)
+    {
+        score = 0;
+        lives = 3;
+        penalty = true;
+    }
+    if (score > 20 && penalty)
+    {
+    penalty = false;
+    }
     fbBoard.Init();
     update();
     draw();
@@ -69,6 +80,10 @@ void FruitBasket::addScore(int score)
 void FruitBasket::minusScore(int score)
 {
     this->score -= score;
+    if (score != 0 && !penalty) 
+    {
+    lives--;
+    }    
     if (this->score < 0)
     {
         this->score = 0;
