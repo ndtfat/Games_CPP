@@ -100,27 +100,24 @@ void Tetris::HandleKeyPress() {
 	int keyPressed = GetKeyPressed();
 
 	switch (keyPressed) {
-		if (!pause) {
-			case KEY_LEFT:
-				MoveBlockLeft();
-				break;
-			case KEY_RIGHT:
-				MoveBlockRight();
-				break;
-			case KEY_DOWN:
-				MoveBlockDown();
-				break;
-			case KEY_UP:
-				RotateBlock();
-				break;
-		} else {
-			case KEY_P:
-				pause = !pause;
-				break;
-			case KEY_R:
-				Reset();
-				break;
-		}
+		case KEY_LEFT:
+			MoveBlockLeft();
+			break;
+		case KEY_RIGHT:
+			MoveBlockRight();
+			break;
+		case KEY_DOWN:
+			MoveBlockDown();
+			break;
+		case KEY_UP:
+			RotateBlock();
+			break;
+		case KEY_P:
+			pause = !pause;
+			break;
+		case KEY_R:
+			Reset();
+			break;
 		default:
 			break;
 	}
@@ -156,15 +153,17 @@ void Tetris::Reset() {
 }
 
 void Tetris::MoveBlockDown() {
-	currBlock.Move(1, 0);
-	if (IsBlockOutside() || !BlockFits()) {
-		currBlock.Move(-1, 0);
-		LockBlock();
+	if (!pause) {
+		currBlock.Move(1, 0);
+		if (IsBlockOutside() || !BlockFits()) {
+			currBlock.Move(-1, 0);
+			LockBlock();
+		}
 	}
 }
 
 void Tetris::MoveBlockLeft() {
-	if (!gameOver) {
+	if (!gameOver && !pause) {
 		currBlock.Move(0, -1);
 		if (IsBlockOutside() || !BlockFits()) {
 			currBlock.Move(0, 1);
@@ -173,7 +172,7 @@ void Tetris::MoveBlockLeft() {
 }
 
 void Tetris::MoveBlockRight() {
-	if (!gameOver) {
+	if (!gameOver && !pause) {
 		currBlock.Move(0, 1);
 		if (IsBlockOutside() || !BlockFits()) {
 			currBlock.Move(0, -1);
@@ -182,7 +181,7 @@ void Tetris::MoveBlockRight() {
 }
 
 void Tetris::RotateBlock() {
-	if (!gameOver) {
+	if (!gameOver && !pause) {
 		currBlock.Rotate();
 		if (IsBlockOutside() || !BlockFits()) {
 			currBlock.UndoRotate();
