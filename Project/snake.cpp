@@ -45,31 +45,31 @@ void Snake::HandleInput() {
     default:
         break;
     }
-   
-    if (TimeOut(0.4) && !paused)
-    {
-        snakemove.Update();
-    }
- 
-    if (IsKeyPressed(KEY_UP) && snakemove.direction.y != 1)
-    {
-        snakemove.direction = { 0,-1 };
-        running = true;
-    }
-    if (IsKeyPressed(KEY_DOWN) && snakemove.direction.y != -1)
-    {
-        snakemove.direction = { 0,1 };
-        running = true;
-    }
-    if (IsKeyPressed(KEY_RIGHT) && snakemove.direction.x != -1)
-    {
-        snakemove.direction = { 1,0 };
-        running = true;
-    }
-    if (IsKeyPressed(KEY_LEFT) && snakemove.direction.x != 1)
-    {
-        snakemove.direction = { -1,0 };
-        running = true;
+    if (!paused) {
+        if (TimeOut(0.4))
+        {
+            snakemove.Update();
+        }
+        if (IsKeyPressed(KEY_UP) && snakemove.direction.y != 1)
+        {
+            snakemove.direction = { 0,-1 };
+            running = true;
+        }
+        if (IsKeyPressed(KEY_DOWN) && snakemove.direction.y != -1)
+        {
+            snakemove.direction = { 0,1 };
+            running = true;
+        }
+        if (IsKeyPressed(KEY_RIGHT) && snakemove.direction.x != -1)
+        {
+            snakemove.direction = { 1,0 };
+            running = true;
+        }
+        if (IsKeyPressed(KEY_LEFT) && snakemove.direction.x != 1)
+        {
+            snakemove.direction = { -1,0 };
+            running = true;
+        }
     }
 }
 void Snake::CheckCollisionWithFood() {
@@ -92,13 +92,6 @@ void Snake::CheckCollisionWithEdges() {
         GameOver();
     }
 }
-void Snake::GameOver()
-{
-    snakemove.Reset();
-    food.position = food.GenerateRandomPos(snakemove.body);
-    running = false;
-    score = 0;
-}
 
 void Snake::CheckCollisionWithTail()
 {
@@ -110,4 +103,12 @@ void Snake::CheckCollisionWithTail()
             GameOver();
         }
     }
+}
+
+void Snake::GameOver()
+{
+    snakemove.Reset();
+    food.position = food.GenerateRandomPos(snakemove.body);
+    running = false;
+    score = 0;
 }
